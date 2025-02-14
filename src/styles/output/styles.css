@@ -522,11 +522,17 @@
   }
 }
 @layer utilities {
+  .collapse {
+    visibility: collapse;
+  }
   .absolute {
     position: absolute;
   }
   .relative {
     position: relative;
+  }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
   }
   .top-2\.5 {
     top: calc(var(--spacing) * 2.5);
@@ -594,8 +600,14 @@
   .-mb-\[20px\] {
     margin-bottom: calc(20px * -1);
   }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
   .mb-1\.5 {
     margin-bottom: calc(var(--spacing) * 1.5);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
   }
   .mb-2\.5 {
     margin-bottom: calc(var(--spacing) * 2.5);
@@ -621,6 +633,9 @@
   .mb-14 {
     margin-bottom: calc(var(--spacing) * 14);
   }
+  .-ml-3 {
+    margin-left: calc(var(--spacing) * -3);
+  }
   .-ml-3\.5 {
     margin-left: calc(var(--spacing) * -3.5);
   }
@@ -635,6 +650,18 @@
   }
   .inline-block {
     display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .list-item {
+    display: list-item;
+  }
+  .table {
+    display: table;
+  }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
   }
   .h-1\.5 {
     height: calc(var(--spacing) * 1.5);
@@ -690,6 +717,9 @@
   .max-w-\[1450px\] {
     max-width: 1450px;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .-translate-\[10px\] {
     --tw-translate-x: calc(10px * -1);
     --tw-translate-y: calc(10px * -1);
@@ -714,11 +744,11 @@
   .cursor-pointer {
     cursor: pointer;
   }
+  .resize {
+    resize: both;
+  }
   .justify-end {
     justify-content: flex-end;
-  }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
   }
   .gap-20 {
     gap: calc(var(--spacing) * 20);
@@ -759,6 +789,9 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[url\(\.\/resources\/images\/085_avian-bird-flu\.jpg\)\] {
+    background-image: url(./resources/images/085_avian-bird-flu.jpg);
+  }
   .bg-\[url\(\/src\/resources\/images\/085_avian-bird-flu\.jpg\)\] {
     background-image: url(/src/resources/images/085_avian-bird-flu.jpg);
   }
@@ -771,8 +804,14 @@
   .p-0 {
     padding: calc(var(--spacing) * 0);
   }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
   .px-3\.5 {
     padding-inline: calc(var(--spacing) * 3.5);
@@ -789,6 +828,9 @@
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
   }
+  .pt-1 {
+    padding-top: calc(var(--spacing) * 1);
+  }
   .pt-1\.5 {
     padding-top: calc(var(--spacing) * 1.5);
   }
@@ -801,11 +843,11 @@
   .pt-\[calc\(20vh\+78px\)\] {
     padding-top: calc(20vh + 78px);
   }
-  .pr-5 {
-    padding-right: calc(var(--spacing) * 5);
-  }
   .pr-12 {
     padding-right: calc(var(--spacing) * 12);
+  }
+  .pb-3 {
+    padding-bottom: calc(var(--spacing) * 3);
   }
   .pb-3\.5 {
     padding-bottom: calc(var(--spacing) * 3.5);
@@ -958,8 +1000,17 @@
   .opacity-95 {
     opacity: 95%;
   }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .lg\:absolute {
     @media (width >= 64rem) {
@@ -1019,6 +1070,7 @@
     content: "";
     position: absolute;
     right: 0;
+    top: 200px;
     width: calc(100% - 280px);
     height: 1px;
     background-color: #DFDFDF;
@@ -1327,6 +1379,11 @@
 @property --tw-tracking {
   syntax: "*";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
